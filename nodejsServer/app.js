@@ -46,7 +46,7 @@ async function getLightValueFromMysqlDB(res) {
       if (error) throw error;
       console.log("DB에서 얻어온 조도는 : ");
       console.log(results);
-      res.send({ lV: results.value });
+      res.send({ lV: results[0].value });
     }
   );
 }

@@ -46,7 +46,7 @@ async function getLightValueFromMysqlDB() {
       if (error) throw error;
       console.log("DB에서 얻어온 조도는 : ");
       console.log(results);
-      return results;
+      res.send({ lV: results.value });
     }
   );
 }
@@ -58,8 +58,7 @@ app.get("/setLightValue", async (req, res) => {
 
 //안드로이드에서 오는 주기적 요청에 응답
 app.get("/getLightValue", async (req, res) => {
-  const result = await getLightValueFromMysqlDB(res);
-  res.send({ lightValue: result });
+  await getLightValueFromMysqlDB(res);
 });
 
 app.listen(3000, () => {

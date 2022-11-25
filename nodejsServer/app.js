@@ -16,7 +16,7 @@ const firebaseConfig = {
 
 const app2 = initializeApp(firebaseConfig);
 
-import admin from "firebase-admin";
+import * as admin from "firebase-admin";
 import { Firestore } from "firebase-admin/firestore";
 import serviceAccount from "./mydbConfig.json";
 

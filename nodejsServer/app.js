@@ -5,7 +5,8 @@ const app = express();
 
 app.get("/getLightValue", async (req, res) => {
   axios.get("http://127.0.0.1:5000/getLightValue").then((data) => {
-    res.send(data.data.lightValue);
+    console.log(data.data.lightValue);
+    //res.send(data.data.lightValue);
   });
 });
 

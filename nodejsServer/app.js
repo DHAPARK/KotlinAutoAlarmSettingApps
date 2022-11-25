@@ -28,6 +28,7 @@ connection.query(
   }
 );
 */
+/*
 async function setLightValueFromMysqlDB(lV, res) {
   connection.query(
     "UPDATE lightValueTable SET value = ? WHERE idx = ?",
@@ -38,7 +39,7 @@ async function setLightValueFromMysqlDB(lV, res) {
     }
   );
 }
-
+*/
 async function getLightValueFromMysqlDB(res) {
   connection.query(
     "SELECT value from lightValueTable where idx = 1",
@@ -50,11 +51,13 @@ async function getLightValueFromMysqlDB(res) {
     }
   );
 }
+/*
 //파이썬 서버에서 주기적으로 조도를 얻어와 db에 저장
 app.get("/setLightValue", async (req, res) => {
   const data = await axios.get("http://127.0.0.1:5000/getLightValue");
   await setLightValueFromMysqlDB(data.data.lightValue, res);
 });
+*/
 
 //안드로이드에서 오는 주기적 요청에 응답
 app.get("/getLightValue", async (req, res) => {

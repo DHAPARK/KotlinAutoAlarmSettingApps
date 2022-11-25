@@ -52,11 +52,12 @@ async function getLightValueFromMysqlDB(res) {
       if (error) throw error;
       console.log("DB에서 얻어온 조도는 : ");
       console.log(results);
-      
+
       result["lV"] = results[0].value;
-      await resMsg(result,res);
+      await resMsg(result, res);
     }
   );
+  
 }
 /*
 //파이썬 서버에서 주기적으로 조도를 얻어와 db에 저장

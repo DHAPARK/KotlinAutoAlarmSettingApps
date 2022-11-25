@@ -2,10 +2,12 @@ import express from "express";
 import axios from "axios";
 
 const app = express();
+
 app.get("/getLightValue", async (req, res) => {
   const data = await axios.get("http://127.0.0.1:5000/getLightValue");
   console.log(data.data.lightValue);
   res.send(data.data.lightValue);
+  return;
 });
 
 app.listen(3000, () => {

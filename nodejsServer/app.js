@@ -4,10 +4,8 @@ import axios from "axios";
 const app = express();
 app.get("/getLightValue", async (req, res) => {
   const data = await axios.get("http://127.0.0.1:5000/getLightValue");
-  console.log(`전송된 데이터 ${data}`);
-  console.log(data.data);
-  //res.json(data);
-  return;
+  console.log(data.data.lightValue);
+  res.send(data.data.lightValue);
 });
 
 app.listen(3000, () => {

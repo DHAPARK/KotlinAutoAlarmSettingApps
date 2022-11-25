@@ -39,7 +39,7 @@ async function setLightValueFromMysqlDB(lV, res) {
   );
 }
 
-async function getLightValueFromMysqlDB() {
+async function getLightValueFromMysqlDB(res) {
   connection.query(
     "SELECT value from lightValueTable where idx = 1",
     (error, results, fields) => {

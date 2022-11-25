@@ -3,7 +3,7 @@ import axios from "axios";
 import mysql from "mysql";
 import res from "express/lib/response";
 const app = express();
-
+//
 // 연결할 DB 정보입력
 const connection = mysql.createConnection({
   host: "44.211.218.78",

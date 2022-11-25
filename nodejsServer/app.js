@@ -29,19 +29,27 @@ connection.query(
   }
 );
 
-async function setLightValueFromMysqlDB( lV ) {
+async function setLightValueFromMysqlDB(lV) {
   connection.query(
-    "UPDATE lightValueTable SET value = ? WHERE idx = ?",[lV,1],(error, results) => {if (error) throw error;res.send({results:results});}
+    "UPDATE lightValueTable SET value = ? WHERE idx = ?",
+    [lV, 1],
+    (error, results) => {
+      if (error) throw error;
+      res.send({ results: results });
+    }
   );
 }
 
 async function getLightValueFromMysqlDB() {
-  connection.query("SELECT value from lightValueTable where idx = 1", (error, results, fields) => {
-    if (error) throw error;
-    response.send(
+  connection.query(
+    "SELECT value from lightValueTable where idx = 1",
+    (error, results, fields) => {
+      if (error) throw error;
+      response.send({
         lV: results,
-    );
-  });
+      });
+    }
+  );
 }
 
 app.get("/getLightValue", async (req, res) => {

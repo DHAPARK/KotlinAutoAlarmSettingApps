@@ -40,14 +40,21 @@ async function setLightValueFromMysqlDB(lV, res) {
   );
 }
 */
+async function resMsg(result, res) {
+  return res.json(result);
+}
+
 async function getLightValueFromMysqlDB(res) {
+  const result = {};
   connection.query(
     "SELECT value from lightValueTable where idx = 1",
     (error, results, fields) => {
       if (error) throw error;
       console.log("DB에서 얻어온 조도는 : ");
       console.log(results);
-      res.json({ lV: results[0].value });
+      
+      result["lV"] = results[0].value;
+      await resMsg(result,res);
     }
   );
 }

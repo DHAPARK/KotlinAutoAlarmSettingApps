@@ -16,14 +16,14 @@ const firebaseConfig = {
 
 const app2 = initializeApp(firebaseConfig);
 
-import admin from "firebase-admin";
+//import admin from "firebase-admin";
 import { Firestore } from "firebase-admin/firestore";
 import serviceAccount from "./mydbConfig.json";
-
+/*
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
 });
-
+*/
 const db = Firestore.getFirestore();
 
 async function test(lV) {

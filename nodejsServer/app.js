@@ -15,11 +15,11 @@ const firebaseConfig = {
 };
 
 const app2 = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app2);
+//const analytics = getAnalytics(app2);
 
 //var admin = require("firebase-admin");
 import admin from "firebase-admin";
-import firestoreDB from "firebase-admin/firestore";
+//import firestore from "firebase-admin/firestore";
 //import serviceAccount from "./autosetalarmapp-firebase-adminsdk-1ltqu-c9b17d1df8.json";
 //var serviceAccount = require("path/to/serviceAccountKey.json");
 admin.initializeApp({
@@ -41,7 +41,7 @@ admin.initializeApp({
   }),
 });
 
-const db = firestoreDB.getFirestore();
+const db = admin.getFirestore();
 
 async function test(lV) {
   db.collection("lightValue").doc("lV").set({

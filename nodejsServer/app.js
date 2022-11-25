@@ -34,21 +34,19 @@ async function setLightValueFromMysqlDB(lV, res) {
     [lV, 1],
     (error, results) => {
       if (error) throw error;
-      res.send({ results: results });
+      res.send({ result: "success" });
     }
   );
 }
 
-async function getLightValueFromMysqlDB(res) {
+async function getLightValueFromMysqlDB() {
   connection.query(
     "SELECT value from lightValueTable where idx = 1",
     (error, results, fields) => {
       if (error) throw error;
       console.log("DB에서 얻어온 조도는 : ");
       console.log(results);
-      res.send({
-        lV: results,
-      });
+      return results;
     }
   );
 }
@@ -56,13 +54,12 @@ async function getLightValueFromMysqlDB(res) {
 app.get("/setLightValue", async (req, res) => {
   const data = await axios.get("http://127.0.0.1:5000/getLightValue");
   await setLightValueFromMysqlDB(data.data.lightValue, res);
-  res.send({ result: "success" });
 });
 
 //안드로이드에서 오는 주기적 요청에 응답
 app.get("/getLightValue", async (req, res) => {
-  await getLightValueFromMysqlDB(res);
-  res.send({ lightValue: data.data.lightValue });
+  const result = await getLightValueFromMysqlDB(res);
+  res.send({ lightValue: result });
 });
 
 app.listen(3000, () => {

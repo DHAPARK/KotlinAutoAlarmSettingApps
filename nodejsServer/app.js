@@ -65,6 +65,6 @@ app.get("/getLightValue", async (req, res) => {
   await getLightValueFromMysqlDB(res);
 });
 
-app.listen(80, () => {
-  console.log(`80번 포트로 서버 대기중...`);
+app.listen(443, () => {
+  console.log(`443번 포트로 서버 대기중...`);
 });

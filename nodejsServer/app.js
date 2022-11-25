@@ -1,7 +1,7 @@
 import express from "express";
 import axios from "axios";
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+//import { getAnalytics } from "firebase/analytics";
 
 const app = express();
 const firebaseConfig = {
@@ -16,14 +16,14 @@ const firebaseConfig = {
 
 const app2 = initializeApp(firebaseConfig);
 
-//import admin from "firebase-admin";
+import admin from "firebase-admin";
 import { Firestore } from "firebase-admin/firestore";
 import serviceAccount from "./mydbConfig.json";
-/*
+
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
 });
-*/
+
 const db = Firestore.getFirestore();
 
 async function test(lV) {

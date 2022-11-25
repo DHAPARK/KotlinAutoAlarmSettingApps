@@ -20,7 +20,7 @@ const analytics = getAnalytics(app2);
 //var admin = require("firebase-admin");
 import admin from "firebase-admin";
 import firestore from "firebase-admin/firestore";
-import serviceAccount from "./autosetalarmapp-firebase-adminsdk-1ltqu-c9b17d1df8.json";
+//import serviceAccount from "./autosetalarmapp-firebase-adminsdk-1ltqu-c9b17d1df8.json";
 //var serviceAccount = require("path/to/serviceAccountKey.json");
 admin.initializeApp({
   //credential: admin.credential.cert(serviceAccount),

@@ -46,7 +46,7 @@ async function resMsg(result, res) {
 
 async function getLightValueFromMysqlDB(res) {
   const result = {};
-  async connection.query(
+  connection.query(
     "SELECT value from lightValueTable where idx = 1",
     (error, results, fields) => {
       if (error) throw error;
@@ -54,8 +54,9 @@ async function getLightValueFromMysqlDB(res) {
       console.log(results);
 
       result["lV"] = results[0].value;
-      await resMsg(result, res);
+      
     }
+    await resMsg(result, res);
   );
   
 }

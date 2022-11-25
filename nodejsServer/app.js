@@ -55,7 +55,7 @@ async function getLightValueFromMysqlDB(res) {
 //파이썬 서버에서 주기적으로 조도를 얻어와 db에 저장
 app.get("/setLightValue", async (req, res) => {
   const data = await axios.get("http://127.0.0.1:5000/getLightValue");
-  setLightValueFromMysqlDB(data.data.lightValue, res);
+  await setLightValueFromMysqlDB(data.data.lightValue, res);
   res.send({ lightValue: data.data.lightValue });
 });
 

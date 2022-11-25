@@ -40,6 +40,6 @@ def getIlluminance():
 	init(cs, mosi, miso, clk)
 	sendCmd(cs, mosi, clk, ((0<<1)|0x0d)<<4)
 	return int(readData(miso, clk))
-while(True):
-	print("current illuminance is %d" % getIlluminance())
-	time.sleep(1)
+#while(True):
+#	print("current illuminance is %d" % getIlluminance())
+	#return getIlluminance()

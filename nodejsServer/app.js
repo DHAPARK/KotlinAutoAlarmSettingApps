@@ -17,14 +17,14 @@ const firebaseConfig = {
 const app2 = initializeApp(firebaseConfig);
 
 import admin from "firebase-admin";
-import { firestore } from "firebase-admin/firestore";
+import { Firestore } from "firebase-admin/firestore";
 import serviceAccount from "./mydbConfig.json";
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
 });
 
-const db = firestore.getFirestore();
+const db = Firestore.getFirestore();
 
 async function test(lV) {
   db.collection("lightValue").doc("lV").set({

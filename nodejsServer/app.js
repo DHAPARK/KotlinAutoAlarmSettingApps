@@ -14,8 +14,8 @@ const firebaseConfig = {
   measurementId: "G-WPZGCLMFM6",
 };
 
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+const app2 = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app2);
 
 //var admin = require("firebase-admin");
 import admin from "firebase-admin";

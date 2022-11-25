@@ -1,7 +1,4 @@
 {
-  "engines": {
-    "node": "16"
-  },
   "name": "nodejsServer",
   "version": "1.0.0",
   "description": "",

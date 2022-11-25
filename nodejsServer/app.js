@@ -56,12 +56,12 @@ async function getLightValueFromMysqlDB(res) {
 app.get("/setLightValue", async (req, res) => {
   const data = await axios.get("http://127.0.0.1:5000/getLightValue");
   await setLightValueFromMysqlDB(data.data.lightValue, res);
-  res.send({ lightValue: data.data.lightValue });
+  res.send({ result: "success" });
 });
 
 //안드로이드에서 오는 주기적 요청에 응답
 app.get("/getLightValue", async (req, res) => {
-  getLightValueFromMysqlDB(res);
+  await getLightValueFromMysqlDB(res);
   res.send({ lightValue: data.data.lightValue });
 });
 

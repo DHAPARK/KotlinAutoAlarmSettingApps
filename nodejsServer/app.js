@@ -1,7 +1,6 @@
 import express from "express";
 import axios from "axios";
 import mysql from "mysql";
-import res from "express/lib/response";
 const app = express();
 //
 // 연결할 DB 정보입력

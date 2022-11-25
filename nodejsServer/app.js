@@ -4,9 +4,8 @@ import axios from "axios";
 const app = express();
 
 app.get("/getLightValue", async (req, res) => {
-  axios.get("http://127.0.0.1:5000/getLightValue").then((data) => {
-    res.send({ lightValue: data.data.lightValue });
-  });
+  const data = await axios.get("http://127.0.0.1:5000/getLightValue");
+  res.send({ lightValue: data.data.lightValue });
 });
 
 app.listen(3000, () => {

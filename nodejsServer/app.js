@@ -4,10 +4,15 @@ import axios from "axios";
 const app = express();
 
 app.get("/getLightValue", async (req, res) => {
-  axios.get("http://127.0.0.1:5000/getLightValue").then((data) => {
-    console.log(data.data.lightValue);
-    //res.send(data.data.lightValue);
-  });
+  axios
+    .get("http://127.0.0.1:5000/getLightValue")
+    .then((data) => {
+      return data.data.lightValue;
+    })
+    .then((value) => {
+      console.log(value);
+      res.send(value);
+    });
 });
 
 app.listen(3000, () => {

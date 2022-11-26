@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "17425099202",
+    "project_id": "autosetalarmapp",
+    "storage_bucket": "autosetalarmapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:17425099202:android:5c736c4bf2e8de6a008e5b",
+        "android_client_info": {
+          "package_name": "my.test.autoalarmsettingapps"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "17425099202-huttf42709762a0orgrkn04ooqt9nfau.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLZEaUxc6gbpuFlFyBkoZjL3Ivc0d2uvA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "17425099202-huttf42709762a0orgrkn04ooqt9nfau.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

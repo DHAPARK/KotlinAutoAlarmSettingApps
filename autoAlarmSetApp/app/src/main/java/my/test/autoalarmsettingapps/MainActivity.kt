@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         var btn = findViewById<Button>(R.id.testBtn)
 
         btn.setOnClickListener {
-            mc.getLightValueFromNodejsServer()
+            mc.getLightValueFromNodejsServer(applicationContext)
         }
 
     }

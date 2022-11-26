@@ -16,9 +16,6 @@ import androidx.core.app.NotificationCompat
 import java.lang.UnsupportedOperationException
 class ArriveAlarmService : Service() {
 
-    var alarmMsg : Long = 0
-    lateinit var stName : String
-    lateinit var routeNum : String
     var vibrator : Vibrator? = null
     lateinit var vibratorEffect : VibrationEffect
 
@@ -31,11 +28,12 @@ class ArriveAlarmService : Service() {
 
     override fun onCreate() {
         super.onCreate()
+        Log.d("서비스진입","서비스진입")
 
         if ( Build.VERSION.SDK_INT >= Build.VERSION_CODES.O )
         {
             vibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
-            vibratorEffect = VibrationEffect.createOneShot(5000, 100)
+            vibratorEffect = VibrationEffect.createOneShot(1000, 100)
         }
 
         Thread.sleep(2000)
@@ -46,11 +44,6 @@ class ArriveAlarmService : Service() {
 
 override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
     Log.d("뭐지","안되는건가")
-    /*
-    alarmMsg = intent!!.getLongExtra("alarmMsg",0)
-    stName = intent!!.getStringExtra("stName")!!
-    routeNum = intent!!.getStringExtra("routeNum")!!
-    */
 
     return super.onStartCommand( intent , flags , startId )
 }
@@ -59,7 +52,8 @@ private var mThread: Thread? = object : Thread("My Thread") {
     override fun run() {
         super.run()
 
-        for (i in 0 until ( (alarmMsg.toInt() - 2) * 60 ) ) {
+        //for (i in 0 until ( ( 6 ) * 3600 ) ) {
+        for (i in 0 until ( 5 ) ) {
             Log.d("알람스레드진행중", "count : ${i}")
 
             try {

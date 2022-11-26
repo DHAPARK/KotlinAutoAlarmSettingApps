@@ -4,10 +4,9 @@
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/737928da0af7599bab2595497f3700da/transformed/print-1.0.0/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/76a1f1068db165c9b104f04ed736da1e/transformed/print-1.0.0/res" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/737928da0af7599bab2595497f3700da/transformed/print-1.0.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/737928da0af7599bab2595497f3700da/transformed/print-1.0.0/AndroidManifest.xml" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/737928da0af7599bab2595497f3700da/transformed/print-1.0.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/737928da0af7599bab2595497f3700da/transformed/print-1.0.0/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

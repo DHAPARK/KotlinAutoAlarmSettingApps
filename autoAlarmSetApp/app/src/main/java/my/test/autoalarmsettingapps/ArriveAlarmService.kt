@@ -52,8 +52,8 @@ private var mThread: Thread? = object : Thread("My Thread") {
     override fun run() {
         super.run()
 
-        //for (i in 0 until ( ( 6 ) * 3600 ) ) {
-        for (i in 0 until ( 5 ) ) {
+        for (i in 0 until ( ( 6 ) * 3600 ) ) {
+        //for (i in 0 until ( 5 ) ) {
             Log.d("알람스레드진행중", "count : ${i}")
 
             try {

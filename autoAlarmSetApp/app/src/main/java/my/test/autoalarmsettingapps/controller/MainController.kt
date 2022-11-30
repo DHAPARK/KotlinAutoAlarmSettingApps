@@ -31,7 +31,8 @@ class MainController {
         var realTime = SimpleDateFormat("HH:mm:ss").format(currentTime).split(":")[0]
 
         //if ( ((realTime.toInt()) > 22) && realLightValue < 20 ) {
-        if ( ((realTime.toInt()) > 9) && realLightValue < 20 ) {
+        //if ( ((realTime.toInt()) > 9) && realLightValue < 20 ) {
+        if ( ((realTime.toInt()) > 10) && realLightValue < 20 ) {
             Log.d("조건충족","조건충족")
 
             return true

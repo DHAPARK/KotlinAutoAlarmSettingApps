@@ -15,11 +15,9 @@ import kotlinx.coroutines.*
 @RequiresApi(Build.VERSION_CODES.S)
 class MainActivity : AppCompatActivity() , CoroutineScope {
 
-    //코루틴
     private lateinit var job : Job
     override val coroutineContext : CoroutineContext
         get() = Dispatchers.Main + job
-    //코루틴
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,15 +26,11 @@ class MainActivity : AppCompatActivity() , CoroutineScope {
         job = Job()
 
         var mc = MainController()
-        //var btn = findViewById<Button>(R.id.testBtn)
-        //btn.setOnClickListener {
-        //}
 
         if ( Build.VERSION.SDK_INT > 9 ){
             val policy = StrictMode.ThreadPolicy.Builder().permitAll().build()
             StrictMode.setThreadPolicy(policy)
         }
-
 
         launch {
             while (true) {
@@ -55,8 +49,6 @@ class MainActivity : AppCompatActivity() , CoroutineScope {
 
         }
 
-
-
-
     }
 }
+
